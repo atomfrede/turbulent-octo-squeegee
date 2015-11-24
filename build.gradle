@@ -30,6 +30,7 @@ asciidoctor {
         'build-date': buildTimestamp(),
 				'source-highlighter' : 'coderay',
 				'imagesdir':'images/de',
+        'language': 'de',
 				'toc':'left',
 				'icons': 'font',
 				'setanchors':'true',

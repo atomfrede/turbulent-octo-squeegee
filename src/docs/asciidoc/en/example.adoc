@@ -1,0 +1,9 @@
+== What is lorem ipsum?
+
+== Where does it come from?
+
+
+=== Images
+
+[.thumb]
+image::hipster.png[scaledwidth=75%]
