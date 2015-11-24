@@ -1,7 +1,5 @@
 # Created by https://www.gitignore.io/api/ntellij,gradle,java,eclipse,jetbrains,osx
 
-#!! ERROR: ntellij is undefined. Use list command to see defined gitignore types !!#
-
 ### Gradle ###
 .gradle
 build/
