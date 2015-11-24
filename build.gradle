@@ -23,56 +23,74 @@ asciidoctorj {
 }
 
 task htmlGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
-	backends 'html5'
-	attributes 'build-gradle': file('build.gradle'),
-	'sourcedir': project.sourceSets.main.java.srcDirs[0],
-	'endpoint-url': 'http://example.org',
-    'build-date': buildTimestamp(),
-	'source-highlighter' : 'coderay',
-	'imagesdir':'images/de',
-     'language': 'de',
-	'toc':'left',
-	'icons': 'font',
-	'setanchors':'true',
-	'idprefix':'',
-	'idseparator':'-',
-	'docinfo1':'true'
+    	backends 'html5'
+    	attributes 'build-gradle': file('build.gradle'),
+    	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+    	'endpoint-url': 'http://example.org',
+      'build-date': buildTimestamp(),
+    	'source-highlighter' : 'coderay',
+    	'imagesdir':'images/de',
+      'language': 'de',
+    	'toc':'left',
+    	'icons': 'font',
+    	'setanchors':'true',
+    	'idprefix':'',
+    	'idseparator':'-',
+    	'docinfo1':'true'
+}
+
+task pdfGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
+    	backends 'pdf'
+    	attributes 'build-gradle': file('build.gradle'),
+    	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+    	'endpoint-url': 'http://example.org',
+      'build-date': buildTimestamp(),
+    	'source-highlighter' : 'coderay',
+    	'imagesdir':'images/de',
+      'language': 'de',
+    	'toc':'left',
+    	'icons': 'font',
+    	'setanchors':'true',
+    	'idprefix':'',
+    	'idseparator':'-',
+    	'docinfo1':'true'
 }
 
 task htmlEnglish(type: org.asciidoctor.gradle.AsciidoctorTask) {
-	backends 'html5'
-	attributes 'build-gradle': file('build.gradle'),
-	'sourcedir': project.sourceSets.main.java.srcDirs[0],
-	'endpoint-url': 'http://example.org',
-    'build-date': buildTimestamp(),
-	'source-highlighter' : 'coderay',
-	'imagesdir':'images/en',
-     'language': 'en',
-	'toc':'left',
-	'icons': 'font',
-	'setanchors':'true',
-	'idprefix':'',
-	'idseparator':'-',
-	'docinfo1':'true'
+    	backends 'html5'
+    	attributes 'build-gradle': file('build.gradle'),
+    	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+    	'endpoint-url': 'http://example.org',
+      'build-date': buildTimestamp(),
+    	'source-highlighter' : 'coderay',
+    	'imagesdir':'images/en',
+      'language': 'en',
+    	'toc':'left',
+    	'icons': 'font',
+    	'setanchors':'true',
+    	'idprefix':'',
+    	'idseparator':'-',
+    	'docinfo1':'true'
 }
 
-asciidoctor {
-  backends  'html5','pdf'
-	attributes 'build-gradle': file('build.gradle'),
-	'sourcedir': project.sourceSets.main.java.srcDirs[0],
-	'endpoint-url': 'http://example.org',
-        'build-date': buildTimestamp(),
-	'source-highlighter' : 'coderay',
-	'imagesdir':'images/de',
-        'language': 'de',
-	'toc':'left',
-	'icons': 'font',
-	'setanchors':'true',
-	'idprefix':'',
-	'idseparator':'-',
-	'docinfo1':'true'
-
+task pdfEnglish(type: org.asciidoctor.gradle.AsciidoctorTask) {
+    	backends 'pdf'
+    	attributes 'build-gradle': file('build.gradle'),
+    	'sourcedir': project.sourceSets.main.java.srcDirs[0],
+    	'endpoint-url': 'http://example.org',
+      'build-date': buildTimestamp(),
+    	'source-highlighter' : 'coderay',
+    	'imagesdir':'images/en',
+      'language': 'en',
+    	'toc':'left',
+    	'icons': 'font',
+    	'setanchors':'true',
+    	'idprefix':'',
+    	'idseparator':'-',
+    	'docinfo1':'true'
 }
+
+defaultTasks 'htmlGerman', 'pdfGerman'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.9'
