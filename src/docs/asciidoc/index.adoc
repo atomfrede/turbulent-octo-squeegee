@@ -1,7 +1,9 @@
-= Greetings, Java Hipster!
+= Greetings, Asciidoctor!
 Doc Writer <doc.writer@example.org>
 {build-date}
 :revnumber: {project-version}
 :example-caption!:
 ifndef::imagesdir[:imagesdir: images]
 ifndef::language[:language: de]
+
+include::{language}/example.adoc[]
