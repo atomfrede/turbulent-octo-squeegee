@@ -22,7 +22,7 @@ asciidoctorj {
     version = '1.5.3.2'
 }
 
-task germanHtml(type: org.asciidoctor.gradle.AsciidoctorTask) {
+task htmlGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
 	backends 'html5'
 	attributes 'build-gradle': file('build.gradle'),
 	'sourcedir': project.sourceSets.main.java.srcDirs[0],
@@ -39,7 +39,7 @@ task germanHtml(type: org.asciidoctor.gradle.AsciidoctorTask) {
 	'docinfo1':'true'
 }
 
-task englishHtml(type: org.asciidoctor.gradle.AsciidoctorTask) {
+task htmlEnglish(type: org.asciidoctor.gradle.AsciidoctorTask) {
 	backends 'html5'
 	attributes 'build-gradle': file('build.gradle'),
 	'sourcedir': project.sourceSets.main.java.srcDirs[0],
