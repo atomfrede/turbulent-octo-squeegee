@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.10.1'
+    }
+}
+
+plugins {
+	id 'org.asciidoctor.convert' version '1.5.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.asciidoctor.convert'
+
+version = '1.0.0-SNAPSHOT'
+
+asciidoctorj {
+    version = '1.5.3.2'
+}
+
+asciidoctor {
+  backends  'html5','pdf'
+	attributes 'build-gradle': file('build.gradle'),
+				'sourcedir': project.sourceSets.main.java.srcDirs[0],
+				'endpoint-url': 'http://example.org',
+        'build-date': buildTimestamp(),
+				'source-highlighter' : 'coderay',
+				'imagesdir':'images/de',
+				'toc':'left',
+				'icons': 'font',
+				'setanchors':'true',
+				'idprefix':'',
+				'idseparator':'-',
+				'docinfo1':'true'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
+
+def buildTimestamp() {
+  def date = new Date()
+  def formattedDate = date.format('yyyy MM dd HH:mm:ss')
+  return formattedDate
+}
