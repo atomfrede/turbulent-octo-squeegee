@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/ntellij,gradle,java,eclipse,jetbrains,osx
 
+crowdin-account.yaml
+
 ### Gradle ###
 .gradle
 build/

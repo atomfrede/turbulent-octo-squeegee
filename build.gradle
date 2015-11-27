@@ -22,7 +22,12 @@ asciidoctorj {
     version = '1.5.3.2'
 }
 
+
+apply from: 'crowdin.gradle'
+
 task htmlGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
+      group = "documentation"
+      description = "Generates german HTML documentation"
     	backends 'html5'
     	attributes 'build-gradle': file('build.gradle'),
     	'sourcedir': project.sourceSets.main.java.srcDirs[0],
@@ -40,6 +45,8 @@ task htmlGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
 }
 
 task pdfGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
+  group = "documentation"
+  description = "Generates german PDF documentation"
     	backends 'pdf'
     	attributes 'build-gradle': file('build.gradle'),
     	'sourcedir': project.sourceSets.main.java.srcDirs[0],
@@ -57,6 +64,8 @@ task pdfGerman(type: org.asciidoctor.gradle.AsciidoctorTask) {
 }
 
 task htmlEnglish(type: org.asciidoctor.gradle.AsciidoctorTask) {
+    group = "documentation"
+    description = "Generates english PDF documentation"
     	backends 'html5'
     	attributes 'build-gradle': file('build.gradle'),
     	'sourcedir': project.sourceSets.main.java.srcDirs[0],
@@ -74,6 +83,8 @@ task htmlEnglish(type: org.asciidoctor.gradle.AsciidoctorTask) {
 }
 
 task pdfEnglish(type: org.asciidoctor.gradle.AsciidoctorTask) {
+  group = "documentation"
+  description = "Generates english HTML documentation"
     	backends 'pdf'
     	attributes 'build-gradle': file('build.gradle'),
     	'sourcedir': project.sourceSets.main.java.srcDirs[0],

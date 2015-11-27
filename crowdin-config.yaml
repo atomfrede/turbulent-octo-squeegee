@@ -1,0 +1,11 @@
+project_identifier: mensa-upb
+base_path: src/docs/asciidoc
+
+files:
+  -
+    source: '/de/example.adoc'
+    translation: '/%two_letters_code%/%original_file_name%'
+
+  -
+    source: '/images/de/hipster.png'
+    translation: '/images/%two_letters_code%/%original_file_name%'
