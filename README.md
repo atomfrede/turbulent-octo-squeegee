@@ -23,4 +23,17 @@ just execute ``./gradlew htmlEnglish`` for example.
 Translations can be done via crowdin (at the moment ``.adoc`` are not fully supported). All gradle tasks use the offical ``crodwin-cli`` jar file to
 interact with crowdin.
 
+## Setup
+
+You just need to add a file called ``crodwin-accound.yaml``. It must contain your crowdin api key.
+
+```yaml
+api_key: YOUR_API_KEY
+```
+
+In ``crowdin-config-yaml`` you just need to replace the ``project_identifier`` with your project. Depending on your file structure you may need to add additional source files
+in this config file.
+
+## Usage
+
 * ``crowdinHelp`` display help for crodwin-cli
