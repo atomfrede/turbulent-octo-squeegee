@@ -1,6 +1,6 @@
 # turbulent-octo-squeegee
 
-This is an Asciidoctor sample project supporting translation of documentation via different gradle tasks.
+This is an Asciidoctor sample project supporting translation via crowdin. Everything can be automated using different gradle tasks.
 
 # Requirements
 
@@ -17,3 +17,10 @@ This is an Asciidoctor sample project supporting translation of documentation vi
 
 To generate german html and pdf just execute ``./gradlew``, both will be executed as default tasks. For other tasks
 just execute ``./gradlew htmlEnglish`` for example.
+
+# Crowdin integration
+
+Translations can be done via crowdin (at the moment ``.adoc`` are not fully supported). All gradle tasks use the offical ``crodwin-cli`` jar file to
+interact with crowdin.
+
+* ``crowdinHelp`` display help for crodwin-cli
